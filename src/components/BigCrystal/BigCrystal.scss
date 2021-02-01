@@ -1,0 +1,12 @@
+.big-crystal {
+    margin: 20px;
+    width: 256px;
+    height: 256px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+    }
+}
