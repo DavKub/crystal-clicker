@@ -4,19 +4,19 @@ export const CounterContext = createContext();
 
 export const CounterContextProvider = ({ children }) => {
     const [crystalCount, setCrystalCount] = useState(
-        JSON.parse(localStorage.getItem('cookieCount')) || 0
+        JSON.parse(localStorage.getItem('crystalCount')) || 0
     );
 
     useEffect(() => {
-        const CrystalGenerator = setInterval(() => {
+        const crystalGenerator = setInterval(() => {
             setCrystalCount(crystalCount + 1);
         }, 1000);
 
-        return () => clearInterval(CrystalGenerator);
-    });
+        return () => clearInterval(crystalGenerator);
+    }, [crystalCount]);
 
     return (
-        <CounterContext.Provider value={(crystalCount, setCrystalCount)}>
+        <CounterContext.Provider value={{ crystalCount, setCrystalCount }}>
             {children}
         </CounterContext.Provider>
     );

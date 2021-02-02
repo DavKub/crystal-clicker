@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './BigCrystal.scss';
 import bigCrystal from '../../assets/graphics/big_crystal.png';
-import { CounterContext } from '../../context/CounterContext';
+import { CounterContext } from '../../contexts/CounterContext';
 
 const BigCrystal = () => {
     const { crystalCount, setCrystalCount } = useContext(CounterContext);
