@@ -1,18 +1,21 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { KoboldContext } from './KoboldContext';
 
 export const CounterContext = createContext();
 
 export const CounterContextProvider = ({ children }) => {
+    const { koboldTotalCrystalYield } = useContext(KoboldContext);
+
     const [crystalCount, setCrystalCount] = useState(
         JSON.parse(localStorage.getItem('crystalCount')) || 0
     );
 
     useEffect(() => {
-        const crystalGenerator = setInterval(() => {
-            setCrystalCount(crystalCount + 1);
+        const crystalGenerator = setTimeout(() => {
+            setCrystalCount(crystalCount + koboldTotalCrystalYield);
         }, 1000);
 
-        return () => clearInterval(crystalGenerator);
+        return () => clearTimeout(crystalGenerator);
     }, [crystalCount]);
 
     return (
