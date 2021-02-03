@@ -1,0 +1,20 @@
+.kobold {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    width: 250px;
+    height: 150px;
+    display: inline-block;
+
+    &-purchase {
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(160, 207, 132);
+        }
+    }
+}

@@ -3,21 +3,21 @@ import React, { createContext, useEffect, useState } from 'react';
 export const KoboldContext = createContext();
 
 export const KoboldContextProvider = ({ children }) => {
-    const [koboldVerminCount, setKoboldVerminCount] = useState(1);
+    const [koboldVerminCount, setKoboldVerminCount] = useState(0);
     const [koboldMinerCount, setKoboldMinerCount] = useState(0);
-    const [koboldWorkerCount, setKoboldWorkerCount] = useState(3);
+    const [koboldWorkerCount, setKoboldWorkerCount] = useState(0);
     const [koboldLaborerCount, setKoboldLaborerCount] = useState(0);
-    const [koboldTunnelerCount, setKoboldTunnelerCount] = useState(13);
+    const [koboldTunnelerCount, setKoboldTunnelerCount] = useState(0);
     const [koboldGeomancerCount, setKoboldGeomancerCount] = useState(0);
-    const [koboldTaskmasterCount, setKoboldTaskmasterCount] = useState(8);
+    const [koboldTaskmasterCount, setKoboldTaskmasterCount] = useState(0);
 
-    const [koboldVerminYield, setKoboldVerminYield] = useState(1);
-    const [koboldMinerYield, setKoboldMinerYield] = useState(2);
-    const [koboldWorkerYield, setKoboldWorkerYield] = useState(3);
-    const [koboldLaborerYield, setKoboldLaborerYield] = useState(5);
-    const [koboldTunnelerYield, setKoboldTunnelerYield] = useState(8);
-    const [koboldGeomancerYield, setKoboldGeomancerYield] = useState(13);
-    const [koboldTaskmasterYield, setKoboldTaskmasterYield] = useState(21);
+    const [koboldVerminYield, setKoboldVerminYield] = useState(4);
+    const [koboldMinerYield, setKoboldMinerYield] = useState(9);
+    const [koboldWorkerYield, setKoboldWorkerYield] = useState(13);
+    const [koboldLaborerYield, setKoboldLaborerYield] = useState(22);
+    const [koboldTunnelerYield, setKoboldTunnelerYield] = useState(35);
+    const [koboldGeomancerYield, setKoboldGeomancerYield] = useState(57);
+    const [koboldTaskmasterYield, setKoboldTaskmasterYield] = useState(92);
 
     const [
         koboldVerminProductivityLevel,
@@ -111,6 +111,58 @@ export const KoboldContextProvider = ({ children }) => {
                 koboldProductivityLevel.koboldTaskmasterProductivityLevel),
     };
 
+    const kobolds = [
+        {
+            name: 'Kobold Vermin',
+            count: koboldCount.koboldVerminCount,
+            yield: koboldYield.koboldVerminYield,
+            level: koboldProductivityLevel.koboldVerminProductivityLevel,
+            performance: koboldPerformance.koboldVerminPerformance,
+        },
+        {
+            name: 'Kobold Miner',
+            count: koboldCount.koboldMinerCount,
+            yield: koboldYield.koboldMinerYield,
+            level: koboldProductivityLevel.koboldMinerProductivityLevel,
+            performance: koboldPerformance.koboldMinerPerformance,
+        },
+        {
+            name: 'Kobold Worker',
+            count: koboldCount.koboldWorkerCount,
+            yield: koboldYield.koboldWorkerYield,
+            level: koboldProductivityLevel.koboldWorkerProductivityLevel,
+            performance: koboldPerformance.koboldWorkerPerformance,
+        },
+        {
+            name: 'Kobold Laborer',
+            count: koboldCount.koboldLaborerCount,
+            yield: koboldYield.koboldLaborerYield,
+            level: koboldProductivityLevel.koboldLaborerProductivityLevel,
+            performance: koboldPerformance.koboldLaborerPerformance,
+        },
+        {
+            name: 'Kobold Tunneler',
+            count: koboldCount.koboldTunnelerCount,
+            yield: koboldYield.koboldTunnelerYield,
+            level: koboldProductivityLevel.koboldTunnelerProductivityLevel,
+            performance: koboldPerformance.koboldTunnelerPerformance,
+        },
+        {
+            name: 'Kobold Geomancer',
+            count: koboldCount.koboldGeomancerCount,
+            yield: koboldYield.koboldGeomancerYield,
+            level: koboldProductivityLevel.koboldGeomancerProductivityLevel,
+            performance: koboldPerformance.koboldGeomancerPerformance,
+        },
+        {
+            name: 'Kobold Taskmaster',
+            count: koboldCount.koboldTaskmasterCount,
+            yield: koboldYield.koboldTaskmasterYield,
+            level: koboldProductivityLevel.koboldTaskmasterProductivityLevel,
+            performance: koboldPerformance.koboldTaskmasterPerformance,
+        },
+    ];
+
     const koboldPerformanceArray = Object.values(koboldPerformance);
 
     // eslint-disable-next-line
@@ -118,8 +170,7 @@ export const KoboldContextProvider = ({ children }) => {
         setKoboldTotalCrystalYield(
             koboldPerformanceArray.reduce((a, b) => a + b, 0)
         );
-        console.log(koboldTotalCrystalYield);
-    });
+    }, [koboldTotalCrystalYield, koboldPerformanceArray]);
 
     return (
         <KoboldContext.Provider
@@ -169,6 +220,7 @@ export const KoboldContextProvider = ({ children }) => {
                 koboldCount,
                 koboldYield,
                 koboldTotalCrystalYield,
+                kobolds,
             }}
         >
             {children}

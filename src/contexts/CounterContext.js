@@ -5,6 +5,7 @@ export const CounterContext = createContext();
 
 export const CounterContextProvider = ({ children }) => {
     const { koboldTotalCrystalYield } = useContext(KoboldContext);
+    const kobolds = useContext(KoboldContext);
 
     const [crystalCount, setCrystalCount] = useState(
         JSON.parse(localStorage.getItem('crystalCount')) || 0
@@ -16,7 +17,7 @@ export const CounterContextProvider = ({ children }) => {
         }, 1000);
 
         return () => clearTimeout(crystalGenerator);
-    }, [crystalCount]);
+    });
 
     return (
         <CounterContext.Provider value={{ crystalCount, setCrystalCount }}>
