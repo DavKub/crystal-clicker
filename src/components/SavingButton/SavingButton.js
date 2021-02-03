@@ -4,6 +4,7 @@ import './SavingButton.scss';
 
 const SavingButton = () => {
     const { crystalCount } = useContext(CounterContext);
+    const savingModal = document.querySelector('.saving-modal');
 
     function HandleSave() {
         localStorage.setItem('crystalCount', crystalCount);
