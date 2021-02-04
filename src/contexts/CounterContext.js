@@ -5,22 +5,31 @@ export const CounterContext = createContext();
 
 export const CounterContextProvider = ({ children }) => {
     const { koboldTotalCrystalYield } = useContext(KoboldContext);
-    const kobolds = useContext(KoboldContext);
 
     const [crystalCount, setCrystalCount] = useState(
         JSON.parse(localStorage.getItem('crystalCount')) || 0
     );
 
+    const [crystalsLifetime, setCrystalsLifetime] = useState(0);
+
     useEffect(() => {
         const crystalGenerator = setTimeout(() => {
             setCrystalCount(crystalCount + koboldTotalCrystalYield);
-        }, 1000);
+            setCrystalsLifetime(crystalsLifetime + koboldTotalCrystalYield);
+        }, 5000);
 
         return () => clearTimeout(crystalGenerator);
     });
 
     return (
-        <CounterContext.Provider value={{ crystalCount, setCrystalCount }}>
+        <CounterContext.Provider
+            value={{
+                crystalCount,
+                setCrystalCount,
+                crystalsLifetime,
+                setCrystalsLifetime,
+            }}
+        >
             {children}
         </CounterContext.Provider>
     );

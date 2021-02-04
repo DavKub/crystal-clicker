@@ -48,6 +48,22 @@ export const KoboldContextProvider = ({ children }) => {
         setKoboldTaskmasterProductivityLevel,
     ] = useState(1);
 
+    const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(0);
+    const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(0);
+    const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(0);
+    const [koboldLaborerUpgradeCost, setKoboldLaborerUpgradeCost] = useState(0);
+    const [koboldTunnelerUpgradeCost, setKoboldTunnelerUpgradeCost] = useState(
+        0
+    );
+    const [
+        koboldGeomancerUpgradeCost,
+        setKoboldGeomancerUpgradeCost,
+    ] = useState(0);
+    const [
+        koboldTaskmasterUpgradeCost,
+        setKoboldTaskmasterUpgradeCost,
+    ] = useState(0);
+
     const [koboldTotalCrystalYield, setKoboldTotalCrystalYield] = useState(0);
 
     const koboldCount = {
@@ -111,55 +127,86 @@ export const KoboldContextProvider = ({ children }) => {
                 koboldProductivityLevel.koboldTaskmasterProductivityLevel),
     };
 
+    const koboldUpgradeCost = {
+        koboldVerminUpgradeCost: koboldVerminUpgradeCost,
+        koboldMinerUpgradeCost: koboldMinerUpgradeCost,
+        koboldWorkerUpgradeCost: koboldWorkerUpgradeCost,
+        koboldLaborerUpgradeCost: koboldLaborerUpgradeCost,
+        koboldTunnelerUpgradeCost: koboldTunnelerUpgradeCost,
+        koboldGeomancerUpgradeCost: koboldGeomancerUpgradeCost,
+        koboldTaskmasterUpgradeCost: koboldTaskmasterUpgradeCost,
+    };
+
     const kobolds = [
         {
+            id: 1,
             name: 'Kobold Vermin',
             count: koboldCount.koboldVerminCount,
             yield: koboldYield.koboldVerminYield,
             level: koboldProductivityLevel.koboldVerminProductivityLevel,
             performance: koboldPerformance.koboldVerminPerformance,
+            upgradeCost: koboldUpgradeCost.koboldVerminUpgradeCost,
+            price: 25,
         },
         {
+            id: 2,
             name: 'Kobold Miner',
             count: koboldCount.koboldMinerCount,
             yield: koboldYield.koboldMinerYield,
             level: koboldProductivityLevel.koboldMinerProductivityLevel,
             performance: koboldPerformance.koboldMinerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldMinerUpgradeCost,
+            price: 45,
         },
         {
+            id: 3,
             name: 'Kobold Worker',
             count: koboldCount.koboldWorkerCount,
             yield: koboldYield.koboldWorkerYield,
             level: koboldProductivityLevel.koboldWorkerProductivityLevel,
             performance: koboldPerformance.koboldWorkerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldWorkerUpgradeCost,
+            price: 120,
         },
         {
+            id: 4,
             name: 'Kobold Laborer',
             count: koboldCount.koboldLaborerCount,
             yield: koboldYield.koboldLaborerYield,
             level: koboldProductivityLevel.koboldLaborerProductivityLevel,
             performance: koboldPerformance.koboldLaborerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldLaborerUpgradeCost,
+            price: 230,
         },
         {
+            id: 5,
             name: 'Kobold Tunneler',
             count: koboldCount.koboldTunnelerCount,
             yield: koboldYield.koboldTunnelerYield,
             level: koboldProductivityLevel.koboldTunnelerProductivityLevel,
             performance: koboldPerformance.koboldTunnelerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldTunnelerUpgradeCost,
+            price: 540,
         },
         {
+            id: 6,
             name: 'Kobold Geomancer',
             count: koboldCount.koboldGeomancerCount,
             yield: koboldYield.koboldGeomancerYield,
             level: koboldProductivityLevel.koboldGeomancerProductivityLevel,
             performance: koboldPerformance.koboldGeomancerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldGeomancerUpgradeCost,
+            price: 790,
         },
         {
+            id: 7,
             name: 'Kobold Taskmaster',
             count: koboldCount.koboldTaskmasterCount,
             yield: koboldYield.koboldTaskmasterYield,
             level: koboldProductivityLevel.koboldTaskmasterProductivityLevel,
             performance: koboldPerformance.koboldTaskmasterPerformance,
+            upgradeCost: koboldUpgradeCost.koboldTaskmasterUpgradeCost,
+            price: 1100,
         },
     ];
 
@@ -217,9 +264,24 @@ export const KoboldContextProvider = ({ children }) => {
                 setKoboldGeomancerProductivityLevel,
                 koboldTaskmasterProductivityLevel,
                 setKoboldTaskmasterProductivityLevel,
+                koboldVerminUpgradeCost,
+                setKoboldVerminUpgradeCost,
+                koboldMinerUpgradeCost,
+                setKoboldMinerUpgradeCost,
+                koboldWorkerUpgradeCost,
+                setKoboldWorkerUpgradeCost,
+                koboldLaborerUpgradeCost,
+                setKoboldLaborerUpgradeCost,
+                koboldTunnelerUpgradeCost,
+                setKoboldTunnelerUpgradeCost,
+                koboldGeomancerUpgradeCost,
+                setKoboldGeomancerUpgradeCost,
+                koboldTaskmasterUpgradeCost,
+                setKoboldTaskmasterUpgradeCost,
                 koboldCount,
                 koboldYield,
                 koboldTotalCrystalYield,
+                koboldUpgradeCost,
                 kobolds,
             }}
         >

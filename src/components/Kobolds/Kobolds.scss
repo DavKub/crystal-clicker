@@ -1,0 +1,37 @@
+.kobold {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    width: 250px;
+    height: auto;
+    display: inline-block;
+
+    &-purchase {
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(228, 252, 13);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: rgb(238, 238, 238);
+        }
+    }
+
+    &-upgrade {
+        padding: 10px;
+        margin-left: 15px;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(255, 178, 36);
+        }
+    }
+}

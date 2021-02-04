@@ -7,7 +7,7 @@ import { CounterContextProvider } from './contexts/CounterContext';
 import { KoboldContextProvider } from './contexts/KoboldContext';
 
 import kobold from './assets/graphics/kobold.jpg';
-import Kobold from './components/Kobold/Kobold';
+import Kobolds from './components/Kobolds/Kobolds';
 
 const App = () => {
     return (
@@ -23,7 +23,7 @@ const App = () => {
                     alt="Kobold"
                     style={{ width: '300px', float: 'right', zIndex: -50 }}
                 />
-                <Kobold />
+                <Kobolds />
                 <SavingButton />
             </CounterContextProvider>
         </KoboldContextProvider>
