@@ -7,7 +7,7 @@ import { CounterContextProvider } from './contexts/CounterContext';
 import { KoboldContextProvider } from './contexts/KoboldContext';
 
 import kobold from './assets/graphics/kobold.jpg';
-import WorkerUnit from './components/Kobold/Kobold';
+import Kobold from './components/Kobold/Kobold';
 
 const App = () => {
     return (
@@ -18,13 +18,13 @@ const App = () => {
                 </h1>
                 <Counter />
                 <BigCrystal />
-                <SavingButton />
                 <img
                     src={kobold}
                     alt="Kobold"
                     style={{ width: '300px', float: 'right', zIndex: -50 }}
                 />
-                <WorkerUnit />
+                <Kobold />
+                <SavingButton />
             </CounterContextProvider>
         </KoboldContextProvider>
     );
