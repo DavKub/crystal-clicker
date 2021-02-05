@@ -20,6 +20,13 @@ const Kobolds = () => {
         setKoboldTunnelerProductivityLevel,
         setKoboldGeomancerProductivityLevel,
         setKoboldTaskmasterProductivityLevel,
+        setKoboldVerminUpgradeCost,
+        setKoboldMinerUpgradeCost,
+        setKoboldWorkerUpgradeCost,
+        setKoboldLaborerUpgradeCost,
+        setKoboldTunnelerUpgradeCost,
+        setKoboldGeomancerUpgradeCost,
+        setKoboldTaskmasterUpgradeCost,
     } = useContext(KoboldContext);
 
     const { crystalCount, setCrystalCount, crystalsLifetime } = useContext(

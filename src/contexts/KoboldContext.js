@@ -48,21 +48,23 @@ export const KoboldContextProvider = ({ children }) => {
         setKoboldTaskmasterProductivityLevel,
     ] = useState(1);
 
-    const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(0);
-    const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(0);
-    const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(0);
-    const [koboldLaborerUpgradeCost, setKoboldLaborerUpgradeCost] = useState(0);
+    const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(75);
+    const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(155);
+    const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(360);
+    const [koboldLaborerUpgradeCost, setKoboldLaborerUpgradeCost] = useState(
+        720
+    );
     const [koboldTunnelerUpgradeCost, setKoboldTunnelerUpgradeCost] = useState(
-        0
+        1620
     );
     const [
         koboldGeomancerUpgradeCost,
         setKoboldGeomancerUpgradeCost,
-    ] = useState(0);
+    ] = useState(2370);
     const [
         koboldTaskmasterUpgradeCost,
         setKoboldTaskmasterUpgradeCost,
-    ] = useState(0);
+    ] = useState(3300);
 
     const [koboldTotalCrystalYield, setKoboldTotalCrystalYield] = useState(0);
 
