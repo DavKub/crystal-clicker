@@ -27,12 +27,19 @@ const Kobolds = () => {
         setKoboldTunnelerUpgradeCost,
         setKoboldGeomancerUpgradeCost,
         setKoboldTaskmasterUpgradeCost,
+        setKoboldVerminYield,
+        setKoboldMinerYield,
+        setKoboldWorkerYield,
+        setKoboldLaborerYield,
+        setKoboldTunnelerYield,
+        setKoboldGeomancerYield,
+        setKoboldTaskmasterYield,
     } = useContext(KoboldContext);
 
     const { crystalCount, setCrystalCount, crystalsLifetime } = useContext(
         CounterContext
     );
-
+    console.log(crystalCount);
     return (
         <div>
             <div className="kobold">
@@ -58,20 +65,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[0].price}
+                    disabled={
+                        crystalsLifetime < kobolds[0].price ||
+                        crystalCount < kobolds[0].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldVerminProductivityLevel(
                             (koboldVerminProductivityLevel) =>
                                 (koboldVerminProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldVerminUpgradeCost(
+                            (koboldVerminUpgradeCost) =>
+                                koboldVerminUpgradeCost * 3
+                        );
+                        setKoboldVerminYield(
+                            (koboldVerminYield) => koboldVerminYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[0].upgradeCost ||
+                        crystalCount < kobolds[0].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[0].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[0].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -98,20 +121,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[1].price}
+                    disabled={
+                        crystalsLifetime < kobolds[1].price ||
+                        crystalCount < kobolds[1].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldMinerProductivityLevel(
                             (koboldMinerProductivityLevel) =>
                                 (koboldMinerProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldMinerUpgradeCost(
+                            (koboldMinerUpgradeCost) =>
+                                koboldMinerUpgradeCost * 3
+                        );
+                        setKoboldMinerYield(
+                            (koboldMinerYield) => koboldMinerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[1].upgradeCost ||
+                        crystalCount < kobolds[1].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[1].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[1].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -138,20 +177,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[2].price}
+                    disabled={
+                        crystalsLifetime < kobolds[2].price ||
+                        crystalCount < kobolds[2].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldWorkerProductivityLevel(
                             (koboldWorkerProductivityLevel) =>
                                 (koboldWorkerProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldWorkerUpgradeCost(
+                            (koboldWorkerUpgradeCost) =>
+                                koboldWorkerUpgradeCost * 3
+                        );
+                        setKoboldWorkerYield(
+                            (koboldWorkerYield) => koboldWorkerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[2].upgradeCost ||
+                        crystalCount < kobolds[2].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[2].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[2].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -179,20 +234,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[3].price}
+                    disabled={
+                        crystalsLifetime < kobolds[3].price ||
+                        crystalCount < kobolds[3].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldLaborerProductivityLevel(
                             (koboldLaborerProductivityLevel) =>
                                 (koboldLaborerProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldLaborerUpgradeCost(
+                            (koboldLaborerUpgradeCost) =>
+                                koboldLaborerUpgradeCost * 3
+                        );
+                        setKoboldLaborerYield(
+                            (koboldLaborerYield) => koboldLaborerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[3].upgradeCost ||
+                        crystalCount < kobolds[3].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[3].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[3].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -220,20 +291,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[4].price}
+                    disabled={
+                        crystalsLifetime < kobolds[4].price ||
+                        crystalCount < kobolds[4].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldTunnelerProductivityLevel(
                             (koboldTunnelerProductivityLevel) =>
                                 (koboldTunnelerProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldTunnelerUpgradeCost(
+                            (koboldTunnelerUpgradeCost) =>
+                                koboldTunnelerUpgradeCost * 3
+                        );
+                        setKoboldTunnelerYield(
+                            (koboldTunnelerYield) => koboldTunnelerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[4].upgradeCost ||
+                        crystalCount < kobolds[4].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[4].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[4].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -261,20 +348,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[5].price}
+                    disabled={
+                        crystalsLifetime < kobolds[5].price ||
+                        crystalCount < kobolds[5].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldGeomancerProductivityLevel(
                             (koboldGeomancerProductivityLevel) =>
                                 (koboldGeomancerProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldGeomancerUpgradeCost(
+                            (koboldGeomancerUpgradeCost) =>
+                                koboldGeomancerUpgradeCost * 3
+                        );
+                        setKoboldGeomancerYield(
+                            (koboldGeomancerYield) => koboldGeomancerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[5].upgradeCost ||
+                        crystalCount < kobolds[5].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[5].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[5].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
 
@@ -302,20 +405,36 @@ const Kobolds = () => {
                             );
                         }
                     }}
-                    disabled={crystalsLifetime < kobolds[6].price}
+                    disabled={
+                        crystalsLifetime < kobolds[6].price ||
+                        crystalCount < kobolds[6].price
+                    }
                 >
                     Purchase
                 </button>
                 <button
                     className="kobold-upgrade"
-                    onClick={() =>
+                    onClick={() => {
                         setKoboldTaskmasterProductivityLevel(
                             (koboldTaskmasterProductivityLevel) =>
                                 (koboldTaskmasterProductivityLevel += 1)
-                        )
+                        );
+                        setKoboldTaskmasterUpgradeCost(
+                            (koboldTaskmasterUpgradeCost) =>
+                                koboldTaskmasterUpgradeCost * 3
+                        );
+                        setKoboldTaskmasterYield(
+                            (koboldTaskmasterYield) => koboldTaskmasterYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[6].upgradeCost ||
+                        crystalCount < kobolds[6].upgradeCost
                     }
                 >
-                    Upgrade
+                    {kobolds[6].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[6].upgradeCost)}`
+                        : 'MAX'}
                 </button>
             </div>
         </div>

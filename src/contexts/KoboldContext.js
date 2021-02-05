@@ -3,68 +3,122 @@ import React, { createContext, useEffect, useState } from 'react';
 export const KoboldContext = createContext();
 
 export const KoboldContextProvider = ({ children }) => {
-    const [koboldVerminCount, setKoboldVerminCount] = useState(0);
-    const [koboldMinerCount, setKoboldMinerCount] = useState(0);
-    const [koboldWorkerCount, setKoboldWorkerCount] = useState(0);
-    const [koboldLaborerCount, setKoboldLaborerCount] = useState(0);
-    const [koboldTunnelerCount, setKoboldTunnelerCount] = useState(0);
-    const [koboldGeomancerCount, setKoboldGeomancerCount] = useState(0);
-    const [koboldTaskmasterCount, setKoboldTaskmasterCount] = useState(0);
+    const [koboldVerminCount, setKoboldVerminCount] = useState(
+        JSON.parse(localStorage.getItem('koboldVerminCount')) || 0
+    );
+    const [koboldMinerCount, setKoboldMinerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldMinerCount')) || 0
+    );
+    const [koboldWorkerCount, setKoboldWorkerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldWorkerCount')) || 0
+    );
+    const [koboldLaborerCount, setKoboldLaborerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldLaborerCount')) || 0
+    );
+    const [koboldTunnelerCount, setKoboldTunnelerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldTunnelerCount')) || 0
+    );
+    const [koboldGeomancerCount, setKoboldGeomancerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldGeomancerCount')) || 0
+    );
+    const [koboldTaskmasterCount, setKoboldTaskmasterCount] = useState(
+        JSON.parse(localStorage.getItem('koboldTaskmasterCount')) || 0
+    );
 
-    const [koboldVerminYield, setKoboldVerminYield] = useState(4);
-    const [koboldMinerYield, setKoboldMinerYield] = useState(9);
-    const [koboldWorkerYield, setKoboldWorkerYield] = useState(13);
-    const [koboldLaborerYield, setKoboldLaborerYield] = useState(22);
-    const [koboldTunnelerYield, setKoboldTunnelerYield] = useState(35);
-    const [koboldGeomancerYield, setKoboldGeomancerYield] = useState(57);
-    const [koboldTaskmasterYield, setKoboldTaskmasterYield] = useState(92);
+    const [koboldVerminYield, setKoboldVerminYield] = useState(
+        JSON.parse(localStorage.getItem('koboldVerminYield')) || 4
+    );
+    const [koboldMinerYield, setKoboldMinerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldMinerYield')) || 9
+    );
+    const [koboldWorkerYield, setKoboldWorkerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldWorkerYield')) || 13
+    );
+    const [koboldLaborerYield, setKoboldLaborerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldLaborerYield')) || 22
+    );
+    const [koboldTunnelerYield, setKoboldTunnelerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldTunnelerYield')) || 35
+    );
+    const [koboldGeomancerYield, setKoboldGeomancerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldGeomancerYield')) || 57
+    );
+    const [koboldTaskmasterYield, setKoboldTaskmasterYield] = useState(
+        JSON.parse(localStorage.getItem('koboldTaskmasterYield')) || 92
+    );
 
     const [
         koboldVerminProductivityLevel,
         setKoboldVerminProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldVerminProductivityLevel')) || 1
+    );
     const [
         koboldMinerProductivityLevel,
         setKoboldMinerProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldMinerProductivityLevel')) || 1
+    );
     const [
         koboldWorkerProductivityLevel,
         setKoboldWorkerProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldWorkerProductivityLevel')) || 1
+    );
     const [
         koboldLaborerProductivityLevel,
         setKoboldLaborerProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldLaborerProductivityLevel')) || 1
+    );
     const [
         koboldTunnelerProductivityLevel,
         setKoboldTunnelerProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldTunnelerProductivityLevel')) || 1
+    );
     const [
         koboldGeomancerProductivityLevel,
         setKoboldGeomancerProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldGeomancerProductivityLevel')) ||
+            1
+    );
     const [
         koboldTaskmasterProductivityLevel,
         setKoboldTaskmasterProductivityLevel,
-    ] = useState(1);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldTaskmasterProductivityLevel')) ||
+            1
+    );
 
-    const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(75);
-    const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(155);
-    const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(360);
+    const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(
+        JSON.parse(localStorage.getItem('koboldVerminUpgradeCost')) || 75
+    );
+    const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(
+        JSON.parse(localStorage.getItem('koboldMinerUpgradeCost')) || 155
+    );
+    const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(
+        JSON.parse(localStorage.getItem('koboldWorkerUpgradeCost')) || 360
+    );
     const [koboldLaborerUpgradeCost, setKoboldLaborerUpgradeCost] = useState(
-        720
+        JSON.parse(localStorage.getItem('koboldLaborerUpgradeCost')) || 720
     );
     const [koboldTunnelerUpgradeCost, setKoboldTunnelerUpgradeCost] = useState(
-        1620
+        JSON.parse(localStorage.getItem('koboldTunnelerUpgradeCost')) || 1620
     );
     const [
         koboldGeomancerUpgradeCost,
         setKoboldGeomancerUpgradeCost,
-    ] = useState(2370);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldGeomancerUpgradeCost')) || 2370
+    );
     const [
         koboldTaskmasterUpgradeCost,
         setKoboldTaskmasterUpgradeCost,
-    ] = useState(3300);
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldTaskmasterUpgradeCost')) || 3300
+    );
 
     const [koboldTotalCrystalYield, setKoboldTotalCrystalYield] = useState(0);
 

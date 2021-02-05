@@ -10,7 +10,10 @@ const Counter = () => {
     return (
         <>
             <div id="crystal-count">{`Crystal production: ${koboldTotalCrystalYield} crystals / 5 seconds`}</div>
-            <div id="crystal-count">{`Crystals owned: ${crystalCount}`}</div>
+            <div id="crystal-count">{`Crystals owned: ${Math.round(
+                crystalCount
+            )}
+            `}</div>
         </>
     );
 };

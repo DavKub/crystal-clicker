@@ -8,6 +8,7 @@
 
     &-purchase {
         padding: 10px;
+        width: 80px;
         background-color: transparent;
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -24,6 +25,7 @@
 
     &-upgrade {
         padding: 10px;
+        min-width: 80px;
         margin-left: 15px;
         background-color: transparent;
         border: 1px solid #ccc;
@@ -32,6 +34,10 @@
         &:hover {
             cursor: pointer;
             background-color: rgb(255, 178, 36);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: rgb(238, 238, 238);
         }
     }
 }

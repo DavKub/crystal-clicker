@@ -1,18 +1,13 @@
 import React, { useContext } from 'react';
-import { CounterContext } from '../../contexts/CounterContext';
+import { GameContext } from '../../contexts/GameContext';
 import './SavingButton.scss';
 
 const SavingButton = () => {
-    const { crystalCount } = useContext(CounterContext);
-    const savingModal = document.querySelector('.saving-modal');
-
-    function HandleSave() {
-        localStorage.setItem('crystalCount', crystalCount);
-    }
+    const saveGame = useContext(GameContext);
 
     return (
         <div>
-            <button onClick={HandleSave}>Save Game</button>
+            <button onClick={saveGame}>Save Game</button>
         </div>
     );
 };

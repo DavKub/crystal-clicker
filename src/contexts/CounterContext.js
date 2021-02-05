@@ -10,7 +10,9 @@ export const CounterContextProvider = ({ children }) => {
         JSON.parse(localStorage.getItem('crystalCount')) || 0
     );
 
-    const [crystalsLifetime, setCrystalsLifetime] = useState(0);
+    const [crystalsLifetime, setCrystalsLifetime] = useState(
+        JSON.parse(localStorage.getItem('crystalsLifetime')) || 0
+    );
 
     useEffect(() => {
         const crystalGenerator = setTimeout(() => {

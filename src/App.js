@@ -8,23 +8,26 @@ import { KoboldContextProvider } from './contexts/KoboldContext';
 
 import kobold from './assets/graphics/kobold.jpg';
 import Kobolds from './components/Kobolds/Kobolds';
+import GameContextProvider from './contexts/GameContext';
 
 const App = () => {
     return (
         <KoboldContextProvider>
             <CounterContextProvider>
-                <h1>
-                    <center>Kobold mining factory</center>
-                </h1>
-                <Counter />
-                <BigCrystal />
-                <img
-                    src={kobold}
-                    alt="Kobold"
-                    style={{ width: '300px', float: 'right', zIndex: -50 }}
-                />
-                <Kobolds />
-                <SavingButton />
+                <GameContextProvider>
+                    <h1>
+                        <center>Kobold mining factory</center>
+                    </h1>
+                    <Counter />
+                    <BigCrystal />
+                    <img
+                        src={kobold}
+                        alt="Kobold"
+                        style={{ width: '300px', float: 'right', zIndex: -50 }}
+                    />
+                    <Kobolds />
+                    <SavingButton />
+                </GameContextProvider>
             </CounterContextProvider>
         </KoboldContextProvider>
     );
