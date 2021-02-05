@@ -24,6 +24,9 @@ export const KoboldContextProvider = ({ children }) => {
     const [koboldTaskmasterCount, setKoboldTaskmasterCount] = useState(
         JSON.parse(localStorage.getItem('koboldTaskmasterCount')) || 0
     );
+    const [koboldOverseerCount, setKoboldOverseerCount] = useState(
+        JSON.parse(localStorage.getItem('koboldOverseerCount')) || 0
+    );
 
     const [koboldVerminYield, setKoboldVerminYield] = useState(
         JSON.parse(localStorage.getItem('koboldVerminYield')) || 4
@@ -45,6 +48,9 @@ export const KoboldContextProvider = ({ children }) => {
     );
     const [koboldTaskmasterYield, setKoboldTaskmasterYield] = useState(
         JSON.parse(localStorage.getItem('koboldTaskmasterYield')) || 92
+    );
+    const [koboldOverseerYield, setKoboldOverseerYield] = useState(
+        JSON.parse(localStorage.getItem('koboldOverseerYield')) || 215
     );
 
     const [
@@ -91,6 +97,12 @@ export const KoboldContextProvider = ({ children }) => {
         JSON.parse(localStorage.getItem('koboldTaskmasterProductivityLevel')) ||
             1
     );
+    const [
+        koboldOverseerProductivityLevel,
+        setKoboldOverseerProductivityLevel,
+    ] = useState(
+        JSON.parse(localStorage.getItem('koboldOverseerProductivityLevel')) || 1
+    );
 
     const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(
         JSON.parse(localStorage.getItem('koboldVerminUpgradeCost')) || 75
@@ -119,6 +131,9 @@ export const KoboldContextProvider = ({ children }) => {
     ] = useState(
         JSON.parse(localStorage.getItem('koboldTaskmasterUpgradeCost')) || 3300
     );
+    const [koboldOverseerUpgradeCost, setKoboldOverseerUpgradeCost] = useState(
+        JSON.parse(localStorage.getItem('koboldOverseerUpgradeCost')) || 8000
+    );
 
     const [koboldTotalCrystalYield, setKoboldTotalCrystalYield] = useState(0);
 
@@ -130,6 +145,7 @@ export const KoboldContextProvider = ({ children }) => {
         koboldTunnelerCount: koboldTunnelerCount,
         koboldGeomancerCount: koboldGeomancerCount,
         koboldTaskmasterCount: koboldTaskmasterCount,
+        koboldOverseerCount: koboldOverseerCount,
     };
 
     const koboldYield = {
@@ -140,6 +156,7 @@ export const KoboldContextProvider = ({ children }) => {
         koboldTunnelerYield: koboldTunnelerYield,
         koboldGeomancerYield: koboldGeomancerYield,
         koboldTaskmasterYield: koboldTaskmasterYield,
+        koboldOverseerYield: koboldOverseerYield,
     };
 
     const koboldProductivityLevel = {
@@ -150,6 +167,7 @@ export const KoboldContextProvider = ({ children }) => {
         koboldTunnelerProductivityLevel: koboldTunnelerProductivityLevel,
         koboldGeomancerProductivityLevel: koboldGeomancerProductivityLevel,
         koboldTaskmasterProductivityLevel: koboldTaskmasterProductivityLevel,
+        koboldOverseerProductivityLevel: koboldOverseerProductivityLevel,
     };
 
     const koboldPerformance = {
@@ -181,6 +199,10 @@ export const KoboldContextProvider = ({ children }) => {
             koboldCount.koboldTaskmasterCount *
             (koboldYield.koboldTaskmasterYield *
                 koboldProductivityLevel.koboldTaskmasterProductivityLevel),
+        koboldOverseerPerformance:
+            koboldCount.koboldOverseerCount *
+            (koboldYield.koboldOverseerYield *
+                koboldProductivityLevel.koboldOverseerProductivityLevel),
     };
 
     const koboldUpgradeCost = {
@@ -191,6 +213,7 @@ export const KoboldContextProvider = ({ children }) => {
         koboldTunnelerUpgradeCost: koboldTunnelerUpgradeCost,
         koboldGeomancerUpgradeCost: koboldGeomancerUpgradeCost,
         koboldTaskmasterUpgradeCost: koboldTaskmasterUpgradeCost,
+        koboldOverseerUpgradeCost: koboldOverseerUpgradeCost,
     };
 
     const kobolds = [
@@ -264,6 +287,16 @@ export const KoboldContextProvider = ({ children }) => {
             upgradeCost: koboldUpgradeCost.koboldTaskmasterUpgradeCost,
             price: 1100,
         },
+        {
+            id: 8,
+            name: 'Kobold Overseer',
+            count: koboldCount.koboldOverseerCount,
+            yield: koboldYield.koboldOverseerYield,
+            level: koboldProductivityLevel.koboldOverseerProductivityLevel,
+            performance: koboldPerformance.koboldOverseerPerformance,
+            upgradeCost: koboldUpgradeCost.koboldOverseerUpgradeCost,
+            price: 4500,
+        },
     ];
 
     const koboldPerformanceArray = Object.values(koboldPerformance);
@@ -292,6 +325,8 @@ export const KoboldContextProvider = ({ children }) => {
                 setKoboldGeomancerCount,
                 koboldTaskmasterCount,
                 setKoboldTaskmasterCount,
+                koboldOverseerCount,
+                setKoboldOverseerCount,
                 koboldVerminYield,
                 setKoboldVerminYield,
                 koboldMinerYield,
@@ -306,6 +341,8 @@ export const KoboldContextProvider = ({ children }) => {
                 setKoboldGeomancerYield,
                 koboldTaskmasterYield,
                 setKoboldTaskmasterYield,
+                koboldOverseerYield,
+                setKoboldOverseerYield,
                 koboldVerminProductivityLevel,
                 setKoboldVerminProductivityLevel,
                 koboldMinerProductivityLevel,
@@ -320,6 +357,8 @@ export const KoboldContextProvider = ({ children }) => {
                 setKoboldGeomancerProductivityLevel,
                 koboldTaskmasterProductivityLevel,
                 setKoboldTaskmasterProductivityLevel,
+                koboldOverseerProductivityLevel,
+                setKoboldOverseerProductivityLevel,
                 koboldVerminUpgradeCost,
                 setKoboldVerminUpgradeCost,
                 koboldMinerUpgradeCost,
@@ -334,6 +373,8 @@ export const KoboldContextProvider = ({ children }) => {
                 setKoboldGeomancerUpgradeCost,
                 koboldTaskmasterUpgradeCost,
                 setKoboldTaskmasterUpgradeCost,
+                koboldOverseerUpgradeCost,
+                setKoboldOverseerUpgradeCost,
                 koboldCount,
                 koboldYield,
                 koboldTotalCrystalYield,

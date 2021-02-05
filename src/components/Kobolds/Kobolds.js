@@ -13,6 +13,7 @@ const Kobolds = () => {
         setKoboldTunnelerCount,
         setKoboldGeomancerCount,
         setKoboldTaskmasterCount,
+        setKoboldOverseerCount,
         setKoboldVerminProductivityLevel,
         setKoboldMinerProductivityLevel,
         setKoboldWorkerProductivityLevel,
@@ -20,13 +21,7 @@ const Kobolds = () => {
         setKoboldTunnelerProductivityLevel,
         setKoboldGeomancerProductivityLevel,
         setKoboldTaskmasterProductivityLevel,
-        setKoboldVerminUpgradeCost,
-        setKoboldMinerUpgradeCost,
-        setKoboldWorkerUpgradeCost,
-        setKoboldLaborerUpgradeCost,
-        setKoboldTunnelerUpgradeCost,
-        setKoboldGeomancerUpgradeCost,
-        setKoboldTaskmasterUpgradeCost,
+        setKoboldOverseerProductivityLevel,
         setKoboldVerminYield,
         setKoboldMinerYield,
         setKoboldWorkerYield,
@@ -34,6 +29,15 @@ const Kobolds = () => {
         setKoboldTunnelerYield,
         setKoboldGeomancerYield,
         setKoboldTaskmasterYield,
+        setKoboldOverseerYield,
+        setKoboldVerminUpgradeCost,
+        setKoboldMinerUpgradeCost,
+        setKoboldWorkerUpgradeCost,
+        setKoboldLaborerUpgradeCost,
+        setKoboldTunnelerUpgradeCost,
+        setKoboldGeomancerUpgradeCost,
+        setKoboldTaskmasterUpgradeCost,
+        setKoboldOverseerUpgradeCost,
     } = useContext(KoboldContext);
 
     const { crystalCount, setCrystalCount, crystalsLifetime } = useContext(
@@ -434,6 +438,63 @@ const Kobolds = () => {
                 >
                     {kobolds[6].level < 11
                         ? `Upgrade: ${Math.round(kobolds[6].upgradeCost)}`
+                        : 'MAX'}
+                </button>
+            </div>
+
+            <div className="kobold">
+                <h3>{kobolds[7].name}</h3>
+                <br />
+                <p>Yield: {kobolds[7].yield}</p>
+                <p>Count: {kobolds[7].count}</p>
+                <p>Level: {kobolds[7].level}</p>
+                <p>Price: {kobolds[7].price}</p>
+                <br />
+                <button
+                    className="kobold-purchase"
+                    onClick={() => {
+                        if (crystalCount < kobolds[7].price) {
+                            console.log('Insufficient funds');
+                        } else {
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[7].price
+                            );
+                            setKoboldOverseerCount(
+                                (koboldOverseerCount) =>
+                                    (koboldOverseerCount += 1)
+                            );
+                        }
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[7].price ||
+                        crystalCount < kobolds[7].price
+                    }
+                >
+                    Purchase
+                </button>
+                <button
+                    className="kobold-upgrade"
+                    onClick={() => {
+                        setKoboldOverseerProductivityLevel(
+                            (koboldOverseerProductivityLevel) =>
+                                (koboldOverseerProductivityLevel += 1)
+                        );
+                        setKoboldOverseerUpgradeCost(
+                            (koboldOverseerUpgradeCost) =>
+                                koboldOverseerUpgradeCost * 3
+                        );
+                        setKoboldOverseerYield(
+                            (koboldOverseerYield) => koboldOverseerYield * 2
+                        );
+                    }}
+                    disabled={
+                        crystalsLifetime < kobolds[7].upgradeCost ||
+                        crystalCount < kobolds[7].upgradeCost
+                    }
+                >
+                    {kobolds[7].level < 11
+                        ? `Upgrade: ${Math.round(kobolds[7].upgradeCost)}`
                         : 'MAX'}
                 </button>
             </div>

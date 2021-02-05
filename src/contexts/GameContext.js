@@ -14,6 +14,7 @@ export const GameContextProvider = ({ children }) => {
         koboldTunnelerCount,
         koboldGeomancerCount,
         koboldTaskmasterCount,
+        koboldOverseerCount,
         koboldVerminProductivityLevel,
         koboldMinerProductivityLevel,
         koboldWorkerProductivityLevel,
@@ -21,6 +22,7 @@ export const GameContextProvider = ({ children }) => {
         koboldTunnelerProductivityLevel,
         koboldGeomancerProductivityLevel,
         koboldTaskmasterProductivityLevel,
+        koboldOverseerProductivityLevel,
         koboldVerminYield,
         koboldMinerYield,
         koboldWorkerYield,
@@ -28,6 +30,7 @@ export const GameContextProvider = ({ children }) => {
         koboldTunnelerYield,
         koboldGeomancerYield,
         koboldTaskmasterYield,
+        koboldOverseerYield,
         koboldVerminUpgradeCost,
         koboldMinerUpgradeCost,
         koboldWorkerUpgradeCost,
@@ -35,6 +38,7 @@ export const GameContextProvider = ({ children }) => {
         koboldTunnelerUpgradeCost,
         koboldGeomancerUpgradeCost,
         koboldTaskmasterUpgradeCost,
+        koboldOverseerUpgradeCost,
     } = useContext(KoboldContext);
 
     const [firstLaunch, setFirstLaunch] = useState(true);
@@ -115,6 +119,17 @@ export const GameContextProvider = ({ children }) => {
         localStorage.setItem(
             'koboldTaskmasterUpgradeCost',
             koboldTaskmasterUpgradeCost
+        );
+
+        localStorage.setItem('koboldOverseerCount', koboldOverseerCount);
+        localStorage.setItem(
+            'koboldOverseerProductivityLevel',
+            koboldOverseerProductivityLevel
+        );
+        localStorage.setItem('koboldOverseerYield', koboldOverseerYield);
+        localStorage.setItem(
+            'koboldOverseerUpgradeCost',
+            koboldOverseerUpgradeCost
         );
     };
 

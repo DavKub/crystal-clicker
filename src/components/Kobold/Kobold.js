@@ -2,36 +2,27 @@ import React, { useContext } from 'react';
 import { KoboldContext } from '../../contexts/KoboldContext';
 import './Kobold.scss';
 
-const Kobold = ({ koboldIndex }) => {
+const Kobold = ({ index, name, maxLevel }) => {
     const { kobolds } = useContext(KoboldContext);
-
-    const handlePurchase = (id) => {
-        let selectedKobold = kobolds.filter((kobold) => {
-            return kobold.id === id;
-        });
-
-        console.log(selectedKobold[0].name);
-        selectedKobold[0].count++;
-        console.log(selectedKobold[0].count);
-    };
 
     return (
         <div className="kobold">
-            <h3>{kobolds[0].name}</h3>
+            <h3>{kobolds[index].name}</h3>
             <br />
-            <p>Yield: {kobolds[0].yield}</p>
-            <p>Count: {kobolds[0].count}</p>
-            <p>Level: {kobolds[0].level}</p>
-            <p>Price: {kobolds[0].price}</p>
+            <p>Yield: {kobolds[index].yield}</p>
+            <p>Count: {kobolds[index].count}</p>
+            <p>Level: {kobolds[index].level}</p>
+            <p>Price: {kobolds[index].price}</p>
             <br />
             <button
                 className="kobold-purchase"
                 onClick={() => {
-                    if (crystalCount < kobolds[0].price) {
+                    if (crystalCount < kobolds[index].price) {
                         console.log('Insufficient funds');
                     } else {
                         setCrystalCount(
-                            (crystalCount) => crystalCount - kobolds[0].price
+                            (crystalCount) =>
+                                crystalCount - kobolds[index].price
                         );
                         setKoboldVerminCount(
                             (koboldVerminCount) => (koboldVerminCount += 1)
@@ -39,8 +30,8 @@ const Kobold = ({ koboldIndex }) => {
                     }
                 }}
                 disabled={
-                    crystalsLifetime < kobolds[0].price ||
-                    crystalCount < kobolds[0].price
+                    crystalsLifetime < kobolds[index].price ||
+                    crystalCount < kobolds[index].price
                 }
             >
                 Purchase
@@ -53,17 +44,19 @@ const Kobold = ({ koboldIndex }) => {
                             (koboldVerminProductivityLevel += 1)
                     );
                     setKoboldVerminUpgradeCost(
-                        (koboldVerminUpgradeCost) =>
-                            koboldVerminUpgradeCost * 1.75
+                        (koboldVerminUpgradeCost) => koboldVerminUpgradeCost * 3
+                    );
+                    setKoboldVerminYield(
+                        (koboldVerminYield) => koboldVerminYield * 2
                     );
                 }}
                 disabled={
-                    crystalsLifetime < kobolds[0].upgradeCost ||
-                    crystalCount < kobolds[0].upgradeCost
+                    crystalsLifetime < kobolds[index].upgradeCost ||
+                    crystalCount < kobolds[index].upgradeCost
                 }
             >
-                {kobolds[0].level < 11
-                    ? `Upgrade: ${Math.round(kobolds[0].upgradeCost)}`
+                {kobolds[index].level < maxLevel
+                    ? `Upgrade: ${Math.round(kobolds[index].upgradeCost)}`
                     : 'MAX'}
             </button>
         </div>
