@@ -6,9 +6,9 @@ const SavingButton = () => {
     const saveGame = useContext(GameContext);
 
     return (
-        <div>
-            <button onClick={saveGame}>Save Game</button>
-        </div>
+        <button className="save-btn" onClick={saveGame}>
+            Save Game
+        </button>
     );
 };
 

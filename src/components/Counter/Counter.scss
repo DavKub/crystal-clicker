@@ -1,0 +1,14 @@
+.production,
+.owned {
+    display: inline-block;
+    padding: 20px;
+    font-size: 20px;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.counter {
+    display: inline-block;
+}

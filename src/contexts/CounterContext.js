@@ -18,7 +18,7 @@ export const CounterContextProvider = ({ children }) => {
         const crystalGenerator = setTimeout(() => {
             setCrystalCount(crystalCount + koboldTotalCrystalYield);
             setCrystalsLifetime(crystalsLifetime + koboldTotalCrystalYield);
-        }, 5000);
+        }, 1500);
 
         return () => clearTimeout(crystalGenerator);
     });

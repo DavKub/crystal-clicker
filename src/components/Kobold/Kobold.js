@@ -7,7 +7,7 @@ const Kobold = ({ index, name, maxLevel }) => {
 
     return (
         <div className="kobold">
-            <h3>{kobolds[index].name}</h3>
+            <h3 className="center">{kobolds[index].name}</h3>
             <br />
             <p>Yield: {kobolds[index].yield}</p>
             <p>Count: {kobolds[index].count}</p>

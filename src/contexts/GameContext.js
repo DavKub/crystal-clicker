@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { CounterContext } from './CounterContext';
 import { KoboldContext } from './KoboldContext';
 
@@ -6,6 +6,7 @@ export const GameContext = createContext();
 
 export const GameContextProvider = ({ children }) => {
     const { crystalCount, crystalsLifetime } = useContext(CounterContext);
+
     const {
         koboldVerminCount,
         koboldMinerCount,
@@ -40,8 +41,6 @@ export const GameContextProvider = ({ children }) => {
         koboldTaskmasterUpgradeCost,
         koboldOverseerUpgradeCost,
     } = useContext(KoboldContext);
-
-    const [firstLaunch, setFirstLaunch] = useState(true);
 
     const saveGame = () => {
         localStorage.setItem('crystalCount', crystalCount);
@@ -134,11 +133,7 @@ export const GameContextProvider = ({ children }) => {
     };
 
     return (
-        <GameContext.Provider
-            value={({ firstLaunch, setFirstLaunch }, saveGame)}
-        >
-            {children}
-        </GameContext.Provider>
+        <GameContext.Provider value={saveGame}>{children}</GameContext.Provider>
     );
 };
 

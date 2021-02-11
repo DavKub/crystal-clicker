@@ -8,13 +8,14 @@ const Counter = () => {
     const { koboldTotalCrystalYield } = useContext(KoboldContext);
 
     return (
-        <>
-            <div id="crystal-count">{`Crystal production: ${koboldTotalCrystalYield} crystals / 5 seconds`}</div>
-            <div id="crystal-count">{`Crystals owned: ${Math.round(
-                crystalCount
-            )}
-            `}</div>
-        </>
+        <div className="counter">
+            <div className="production">
+                <span>Production:</span> {koboldTotalCrystalYield} crystals
+            </div>
+            <div className="owned">
+                <span>Crystals owned:</span> {Math.round(crystalCount)}
+            </div>
+        </div>
     );
 };
 
