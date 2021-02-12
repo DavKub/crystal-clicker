@@ -43,7 +43,7 @@ const Kobolds = () => {
     const { crystalCount, setCrystalCount, crystalsLifetime } = useContext(
         CounterContext
     );
-    console.log(crystalCount);
+
     return (
         <>
             <h2>Kobold workers</h2>

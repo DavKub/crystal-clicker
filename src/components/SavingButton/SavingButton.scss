@@ -1,17 +1,29 @@
 .save-btn {
     position: absolute;
     top: 13px;
-    right: 40px;
-    background-color: rgb(255, 238, 0);
+    right: 60px;
+    background-color: rgb(72, 25, 95);
     padding: 8px;
-    border: 2px dotted rgb(71, 71, 71);
+    border: 2px solid rgb(15, 15, 15);
     border-radius: 2px;
     outline: none;
     font-size: 16px;
-    font-weight: bolder;
+    color: rgb(255, 255, 255);
 
     &:hover {
         cursor: pointer;
-        background-color: rgb(255, 245, 98);
+        background-color: rgb(110, 37, 146);
     }
+}
+
+.save-icon {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 25px;
+    display: none;
+}
+
+.show {
+    display: block !important;
 }

@@ -1,12 +1,12 @@
 .header {
-    border-bottom: 2px dotted black;
+    background-color: rgb(27, 24, 31);
 
     &-info {
         display: inline-block;
         position: absolute;
-        top: 3px;
+        top: 6px;
         right: 29.99vw;
         font-size: 16px;
-        font-weight: bolder;
+        font-weight: 400;
     }
 }

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import './BigCrystal.scss';
 import bigCrystal from '../../assets/graphics/big_crystal.png';
 import { CounterContext } from '../../contexts/CounterContext';
-import { GameContext } from '../../contexts/GameContext';
 
 const BigCrystal = () => {
     const {
@@ -12,10 +11,7 @@ const BigCrystal = () => {
         setCrystalsLifetime,
     } = useContext(CounterContext);
 
-    const saveGame = useContext(GameContext);
-
     let hasLaunched = JSON.parse(localStorage.getItem('hasLaunched'));
-    console.log('Has launched: ' + hasLaunched);
 
     if (hasLaunched === null) {
         return (
