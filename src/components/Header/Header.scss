@@ -1,12 +1,78 @@
 .header {
     background-color: rgb(27, 24, 31);
 
-    &-info {
+    &-info-btn {
         display: inline-block;
         position: absolute;
-        top: 6px;
+        top: 16px;
         right: 29.99vw;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: bold;
+        background-color: rgb(72, 25, 95);
+        padding: 8px;
+        border: 2px solid rgb(15, 15, 15);
+        border-radius: 2px;
+        outline: none;
+        font-size: 16px;
+        background-color: rgb(223, 162, 71);
+        color: rgb(0, 0, 0);
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(245, 190, 71);
+        }
+    }
+}
+
+.info-modal {
+    display: none;
+    position: absolute;
+    top: 100px;
+    margin-left: 20vw;
+    border: 1px dotted #ccc;
+    width: 30vw;
+    height: 500px;
+    background-color: #ccc;
+    z-index: 20;
+    color: rgb(15, 15, 15);
+
+    &-close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        padding: 5px;
+        background-color: rgb(223, 162, 71);
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(245, 190, 71);
+        }
+    }
+
+    &-content {
+        padding: 30px;
+
+        li {
+            padding: 5px 0;
+        }
+    }
+
+    .kobold-img {
+        width: 200px;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .game-reset {
+        padding: 5px;
+        background-color: rgb(223, 71, 71);
+        margin-top: 100px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(248, 34, 34);
+        }
     }
 }

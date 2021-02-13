@@ -1,5 +1,5 @@
 .kobold {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(72, 25, 95);
     padding: 10px;
     margin: 3px;
     width: 250px;
@@ -8,24 +8,27 @@
     background-color: rgb(26, 23, 23);
 
     &-purchase {
+        color: white;
         padding: 10px;
         width: 80px;
         background-color: transparent;
         border: 1px solid #ccc;
         border-radius: 10px;
         outline: none;
-        background-color: rgb(189, 229, 155);
+        background-color: rgb(123, 44, 143);
         &:hover {
             cursor: pointer;
-            background-color: rgb(173, 255, 106);
+            background-color: rgb(149, 54, 173);
         }
         &:disabled {
             cursor: not-allowed;
-            background-color: rgb(238, 238, 238);
+            background-color: rgb(161, 161, 161);
+            color: black;
         }
     }
 
     &-upgrade {
+        color: white;
         padding: 10px;
         min-width: 80px;
         margin-left: 15px;
@@ -33,14 +36,15 @@
         border: 1px solid #ccc;
         border-radius: 10px;
         outline: none;
-        background-color: rgb(247, 205, 129);
+        background-color: rgb(48, 105, 119);
         &:hover {
             cursor: pointer;
-            background-color: rgb(255, 178, 36);
+            background-color: rgb(66, 142, 161);
         }
         &:disabled {
             cursor: not-allowed;
-            background-color: rgb(238, 238, 238);
+            background-color: rgb(161, 161, 161);
+            color: black;
         }
     }
 

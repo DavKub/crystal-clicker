@@ -67,18 +67,13 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[0].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[0].price
-                                );
-                                setKoboldVerminCount(
-                                    (koboldVerminCount) =>
-                                        (koboldVerminCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[0].price
+                            );
+                            setKoboldVerminCount(
+                                (koboldVerminCount) => (koboldVerminCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[0].price ||
@@ -136,18 +131,13 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[1].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[1].price
-                                );
-                                setKoboldMinerCount(
-                                    (koboldMinerCount) =>
-                                        (koboldMinerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[1].price
+                            );
+                            setKoboldMinerCount(
+                                (koboldMinerCount) => (koboldMinerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[1].price ||
@@ -205,18 +195,13 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[2].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[2].price
-                                );
-                                setKoboldWorkerCount(
-                                    (koboldWorkerCount) =>
-                                        (koboldWorkerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[2].price
+                            );
+                            setKoboldWorkerCount(
+                                (koboldWorkerCount) => (koboldWorkerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[2].price ||
@@ -274,18 +259,14 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[3].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[3].price
-                                );
-                                setKoboldLaborerCount(
-                                    (koboldLaborerCount) =>
-                                        (koboldLaborerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[3].price
+                            );
+                            setKoboldLaborerCount(
+                                (koboldLaborerCount) =>
+                                    (koboldLaborerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[3].price ||
@@ -343,18 +324,14 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[4].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[4].price
-                                );
-                                setKoboldTunnelerCount(
-                                    (koboldTunnelerCount) =>
-                                        (koboldTunnelerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[4].price
+                            );
+                            setKoboldTunnelerCount(
+                                (koboldTunnelerCount) =>
+                                    (koboldTunnelerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[4].price ||
@@ -412,18 +389,14 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[5].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[5].price
-                                );
-                                setKoboldGeomancerCount(
-                                    (koboldGeomancerCount) =>
-                                        (koboldGeomancerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[5].price
+                            );
+                            setKoboldGeomancerCount(
+                                (koboldGeomancerCount) =>
+                                    (koboldGeomancerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[5].price ||
@@ -482,18 +455,14 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[6].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[6].price
-                                );
-                                setKoboldTaskmasterCount(
-                                    (koboldTaskmasterCount) =>
-                                        (koboldTaskmasterCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[6].price
+                            );
+                            setKoboldTaskmasterCount(
+                                (koboldTaskmasterCount) =>
+                                    (koboldTaskmasterCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[6].price ||
@@ -552,18 +521,14 @@ const Kobolds = () => {
                     <button
                         className="kobold-purchase"
                         onClick={() => {
-                            if (crystalCount < kobolds[7].price) {
-                                console.log('Insufficient funds');
-                            } else {
-                                setCrystalCount(
-                                    (crystalCount) =>
-                                        crystalCount - kobolds[7].price
-                                );
-                                setKoboldOverseerCount(
-                                    (koboldOverseerCount) =>
-                                        (koboldOverseerCount += 1)
-                                );
-                            }
+                            setCrystalCount(
+                                (crystalCount) =>
+                                    crystalCount - kobolds[7].price
+                            );
+                            setKoboldOverseerCount(
+                                (koboldOverseerCount) =>
+                                    (koboldOverseerCount += 1)
+                            );
                         }}
                         disabled={
                             crystalsLifetime < kobolds[7].price ||

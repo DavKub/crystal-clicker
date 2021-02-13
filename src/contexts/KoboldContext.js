@@ -105,34 +105,34 @@ export const KoboldContextProvider = ({ children }) => {
     );
 
     const [koboldVerminUpgradeCost, setKoboldVerminUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldVerminUpgradeCost')) || 75
+        JSON.parse(localStorage.getItem('koboldVerminUpgradeCost')) || 180
     );
     const [koboldMinerUpgradeCost, setKoboldMinerUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldMinerUpgradeCost')) || 155
+        JSON.parse(localStorage.getItem('koboldMinerUpgradeCost')) || 360
     );
     const [koboldWorkerUpgradeCost, setKoboldWorkerUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldWorkerUpgradeCost')) || 360
+        JSON.parse(localStorage.getItem('koboldWorkerUpgradeCost')) || 720
     );
     const [koboldLaborerUpgradeCost, setKoboldLaborerUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldLaborerUpgradeCost')) || 720
+        JSON.parse(localStorage.getItem('koboldLaborerUpgradeCost')) || 1440
     );
     const [koboldTunnelerUpgradeCost, setKoboldTunnelerUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldTunnelerUpgradeCost')) || 1620
+        JSON.parse(localStorage.getItem('koboldTunnelerUpgradeCost')) || 2880
     );
     const [
         koboldGeomancerUpgradeCost,
         setKoboldGeomancerUpgradeCost,
     ] = useState(
-        JSON.parse(localStorage.getItem('koboldGeomancerUpgradeCost')) || 2370
+        JSON.parse(localStorage.getItem('koboldGeomancerUpgradeCost')) || 5760
     );
     const [
         koboldTaskmasterUpgradeCost,
         setKoboldTaskmasterUpgradeCost,
     ] = useState(
-        JSON.parse(localStorage.getItem('koboldTaskmasterUpgradeCost')) || 3300
+        JSON.parse(localStorage.getItem('koboldTaskmasterUpgradeCost')) || 15200
     );
     const [koboldOverseerUpgradeCost, setKoboldOverseerUpgradeCost] = useState(
-        JSON.parse(localStorage.getItem('koboldOverseerUpgradeCost')) || 8000
+        JSON.parse(localStorage.getItem('koboldOverseerUpgradeCost')) || 30400
     );
 
     const [koboldTotalCrystalYield, setKoboldTotalCrystalYield] = useState(0);
@@ -225,7 +225,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldVerminProductivityLevel,
             performance: koboldPerformance.koboldVerminPerformance,
             upgradeCost: koboldUpgradeCost.koboldVerminUpgradeCost,
-            price: 25,
+            price: 30,
         },
         {
             id: 2,
@@ -235,7 +235,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldMinerProductivityLevel,
             performance: koboldPerformance.koboldMinerPerformance,
             upgradeCost: koboldUpgradeCost.koboldMinerUpgradeCost,
-            price: 45,
+            price: 100,
         },
         {
             id: 3,
@@ -245,7 +245,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldWorkerProductivityLevel,
             performance: koboldPerformance.koboldWorkerPerformance,
             upgradeCost: koboldUpgradeCost.koboldWorkerUpgradeCost,
-            price: 120,
+            price: 320,
         },
         {
             id: 4,
@@ -255,7 +255,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldLaborerProductivityLevel,
             performance: koboldPerformance.koboldLaborerPerformance,
             upgradeCost: koboldUpgradeCost.koboldLaborerUpgradeCost,
-            price: 230,
+            price: 520,
         },
         {
             id: 5,
@@ -265,7 +265,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldTunnelerProductivityLevel,
             performance: koboldPerformance.koboldTunnelerPerformance,
             upgradeCost: koboldUpgradeCost.koboldTunnelerUpgradeCost,
-            price: 540,
+            price: 730,
         },
         {
             id: 6,
@@ -275,7 +275,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldGeomancerProductivityLevel,
             performance: koboldPerformance.koboldGeomancerPerformance,
             upgradeCost: koboldUpgradeCost.koboldGeomancerUpgradeCost,
-            price: 790,
+            price: 900,
         },
         {
             id: 7,
@@ -285,7 +285,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldTaskmasterProductivityLevel,
             performance: koboldPerformance.koboldTaskmasterPerformance,
             upgradeCost: koboldUpgradeCost.koboldTaskmasterUpgradeCost,
-            price: 1100,
+            price: 2800,
         },
         {
             id: 8,
@@ -295,7 +295,7 @@ export const KoboldContextProvider = ({ children }) => {
             level: koboldProductivityLevel.koboldOverseerProductivityLevel,
             performance: koboldPerformance.koboldOverseerPerformance,
             upgradeCost: koboldUpgradeCost.koboldOverseerUpgradeCost,
-            price: 4500,
+            price: 6000,
         },
     ];
 
