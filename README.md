@@ -14,5 +14,7 @@ Inspired by Cookie Clicker by Orteil
 Sidenotes:
 
 -   _localStorage_ version
+-   "optimalized" for 1920x1080 resolution (not responsive)
+-   no libraries aside `reactjs` and `node-sass` were used
 -   learning project, not a real deal
 -   updates might or might not follow
