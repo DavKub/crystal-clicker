@@ -15,6 +15,6 @@ Sidenotes:
 
 -   _localStorage_ version
 -   "optimalized" for 1920x1080 resolution (not responsive)
--   no libraries exept for `reactjs` and `node-sass` were used
+-   no libraries except for `reactjs` and `node-sass` were used
 -   learning project, not a real deal
 -   updates might or might not follow
